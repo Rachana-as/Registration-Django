@@ -1,10 +1,13 @@
 from django.contrib import admin
 from django.urls import path,include
-from home import   views
+from .views import Data,index,register
 
 urlpatterns = [
 
-    path('', views.index, name = 'home'),
-    path('register', views.register, name = 'register')
+    path('', index, name = 'home'),
+    path('register', register, name = 'register'),
+    path('api/', Data.as_view() )
+    
+
     
 ]
