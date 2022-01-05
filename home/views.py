@@ -34,8 +34,8 @@ def register(request):
 
 class Data(APIView):
     def get(self,request):
-        employee1=Registration.objects.all()
-        serializer=Serializer(employee1, many=True)
+        data=Registration.objects.all()
+        serializer=Serializer(data, many=True)
         return Response(serializer.data)
 
     def post(self):
